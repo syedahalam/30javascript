@@ -1,9 +1,10 @@
-const containsPurple = (arr) => {
-	for (let color of arr) {
-		if (color === 'purple') {
-			return true;
-		}
+const isValidPassword = (password, username) => {
+	if (password.length < 8 && password === username) {
+		return false;
 	}
-	return false;
+	if (password.indexOf(' ') !== -1) {
+		return false;
+	}
+	return true;
 };
-console.log(containsPurple(['blue', 'purple', 'pink']));
+console.log(isValidPassword('syeda123', 'syeda'));
